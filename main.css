@@ -6,21 +6,9 @@
 }
 
 html {
-    background-color: rgb(247,247,247);
+    background-color: rgb(247, 247, 247);
     width: 100%;
     height: 100%;
-
-    /* align-content: center; */
-    /* text-align: center; */
-    /* height: 100px;
-    width: 600px;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -250px;
-    margin-left: -300px; */
-
     font-family: font;
 }
 
@@ -37,37 +25,31 @@ body {
 }
 
 .form1 {
-    /* display: flex;
-    align-items: center;
-    margin-left: 120px; */
-
     display: inline;
     width: 100%;
-    /* padding: 12px 20px; */
     margin: 8px 0;
     box-sizing: border-box;
+    
 }
 
 #fname {
     margin-left: 11px;
-    sfont-size:20px;
+    font-size:20px;
 }
+
 #fname2{
-   font-size: 20px;
+    font-size:20px;
 }
 
 
 .btnAnswer {
     background-color: #171717;
-    /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    /* display: inline-block; */
     font-size: 16px;
-    /* margin-left:30px; */
     border-radius: 30px;
     font-family: font;
 }

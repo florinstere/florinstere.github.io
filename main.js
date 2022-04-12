@@ -31,7 +31,7 @@ function functiaMea() {
         element.style.background = 'rgb(188, 35, 35)';
     }
     else {
-        myP.innerHTML = `Hello ${numeFieldValue}! <br> Your answer is: ${answerFieldValue}. It seems to be ${correctBoolean}. <br> Please screenshot and ask Florin for a candy! <br>`;
+        myP.innerHTML = `Hello ${numeFieldValue}! <br> Your answer is: ${answerFieldValue}. It seems to be ${correctBoolean}. <br> Please screenshot and ask Florin for a 5 lei! <br>`;
         myEmoji.innerHTML = "&#128525";
         myEmoji.style.paddingTop = "0px";
         myEmoji.style.fontSize = "50px";
