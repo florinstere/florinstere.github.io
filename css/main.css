@@ -1,0 +1,1225 @@
+@font-face{
+    font-family: 'montserrat';
+    src: url(../fonts/Montserrat-Light.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face{
+    font-family: 'montserrat-bold';
+    src: url(../fonts/Montserrat-Bold.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #1b1b1b;
+    color:White;
+    font-family: montserrat;
+}
+
+/* LOADER */ 
+
+.preload{
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 100vh;
+    background: #1b1b1b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+    z-index:9999;
+}
+
+
+
+  .loader {
+    border: 5px solid #ffffff;
+    border-top: 5px solid rgb(250,219, 94);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.preload-finish{
+    opacity:0;
+    pointer-events: none;
+}
+
+
+
+
+/* NAVBAR */
+.navigatie{
+    background-color:transparent;
+    width:100%;
+    position: absolute;;
+    z-index: 99;
+    margin:0px;
+    padding:0px;
+}
+
+
+.logo {
+    float: left;
+    padding: 8px;
+    margin-left: 40px;
+    margin-top: 8px;
+}
+
+.navbar-brand{
+    color:white !important;
+}
+.navbar-brand img{
+    width: auto;
+    height: 100px;
+    margin:-32px 0px -25px 0px;
+}
+
+nav ul {
+    float: right;
+    list-style-type: none;
+    padding-top:5px;
+    margin-right:20px;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li:not(:first-child) {
+    margin-left: 48px;
+}
+
+nav ul li:last-child {
+    margin-right: 24px;
+}
+
+nav ul li a {
+    display: inline-block;
+    outline: none;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 1.1px;
+    font-family: montserrat-bold;
+}
+
+nav ul li a:hover{
+    color:#fff;
+    text-decoration: underline;
+}
+
+
+/* FUNDAL JS */
+
+
+.fundal{
+    background:rgb(202, 174, 61) !important;
+    box-shadow:1px 2px 4px 0px #00000075 !important;
+}
+
+.fundal .nav-btn {
+    background-color:rgb(202, 174, 61);
+    border-radius: 50%;
+    box-shadow:1px 2px 4px 0px #00000075;
+}
+
+.fundal .nav-btn i{
+    background: #fff;
+    border-radius: 2px;
+}
+
+
+#nav:checked + .nav-btn {
+    transform: rotate(45deg);
+    background-color: rgb(202, 174, 61);
+}
+
+#nav:checked + .nav-btn i {
+    background: #fff;
+    transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-btn i:nth-child(1) {
+    transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked + .nav-btn i:nth-child(2) {
+    opacity: 0;
+}
+
+#nav:checked + .nav-btn i:nth-child(3) {
+    transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked ~ .nav-wrapper {
+    z-index: 9990;
+    display:block
+}
+
+#nav:checked ~ .nav-wrapper ul li a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+/* MEDIA SCREEN NAVBAR PTR TLF */
+
+@media only screen and (max-width: 991px){
+
+    .navigatie{
+        background-color:transparent;
+        width:100%;
+        position: absolute;
+        z-index: 99;
+        margin:0px;
+        padding:0px;
+    }
+        
+
+
+    .navbar-brand img{
+        height:100px;
+        margin:-20px 0px 0px 0px;
+    }
+
+    .nav-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: #333;
+        display:none;
+        transition: all 0.2s ease;
+    }
+
+    .nav-wrapper ul {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+    }
+
+    .nav-wrapper ul li {
+          display: block;
+          float: none;
+          width: 100%;
+          text-align: right;
+          padding-top:10px;
+          margin-bottom: 10px;
+          margin-right:20px;
+    }
+
+
+
+    .nav-wrapper ul li:not(:first-child) {
+          margin-left: 0;
+    }
+
+    .nav-wrapper ul li a {
+            margin-right: 20px;
+          padding: 10px 24px;
+          opacity: 0;
+          color: #fff;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 1.2px;
+          transform: translateX(-20px);
+          transition: all 0.2s ease;
+    }
+
+    .nav-btn {
+          position: fixed;
+          right: 30px;
+          top: 28px;
+          display: block;
+          width: 47px;
+          height: 46px;
+          cursor: pointer;
+          z-index: 9999;
+          border-radius: 50%;
+    }
+
+    .nav-btn i {
+          display: block;
+          width: 20px;
+          height: 2px;
+          background: #fff;
+          border-radius: 2px;
+          margin-left: 14px;
+    }
+
+    .nav-btn i:nth-child(1) {
+          margin-top: 16px;
+    }
+
+    .nav-btn i:nth-child(2) {
+          margin-top: 4px;
+          opacity: 1;
+    }
+
+    .nav-btn i:nth-child(3) {
+          margin-top: 4px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* BANNER */
+
+.banner{
+    margin:0px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size:cover;
+    background-image: url(../img/background.jpg);    
+    background-position: center;
+}
+
+/* SCRIS DE LA BANNER */
+
+.title{
+    position: absolute;
+    top:47%;
+    left:41%;
+    text-align: left;
+    transform: translate(-50%,-50%);
+}
+
+.title h1{
+    font-family: montserrat;
+    font-size:60px;
+    color:#f5f6f8;
+    letter-spacing:3px;
+}
+
+.title h2{
+    color:rgb(250,219, 94);
+    font-family: montserrat;
+    font-size:30px;
+    letter-spacing:3px;
+}
+
+
+/* DESPRE NOI ****************************************************************/
+
+.About-head-section{
+    padding-top:0px;
+    padding-bottom:170px;
+}
+
+.despre{
+    padding-top:130px;
+    padding-bottom:30px;
+    text-align: center;
+}
+
+.About-head-section .despre h1{
+    margin-top:-50px;
+    padding-bottom: 80px;
+    font-size: 35px;
+    font-family: montserrat;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(250,219, 94);
+}
+.About-head-section .nr{
+    text-align: right;
+    opacity:0.1;
+    font-size:100px;
+    margin-bottom:-80px;
+    margin-right:50px;
+    font-family: montserrat-bold;
+}
+
+
+.About-head-section .despre h1::after{
+    content:'';
+    background:#fff;
+    display:block;
+    width: 50px;
+    height: 1px;
+    margin:10px auto;
+    opacity:0.5;
+}
+
+
+
+.despre p{
+    padding-top:50px;
+    text-align: left;
+    padding-bottom:20px;
+}
+.buton-despre{
+    text-align: center;
+    padding-top:10px;
+}
+.buton-despre a{
+    border: 1px solid #777;
+    color: white;
+    padding: 10px 25px;
+    display: inline-block;
+    font-family: montserrat;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 12px;
+    outline: none;
+    text-transform: uppercase;
+}
+
+.buton-despre a:hover{
+    opacity:0.8;
+}
+.despre img{
+    width: 400px;
+}
+.despre .poza:before{
+    position: absolute;
+    content: '';
+    right: 60px;
+    top: 25px;
+    border: 5px solid rgba(119, 119, 119, 0.788);
+    width: 70%;
+    height: 100%;
+    z-index: -500;
+}
+
+/* MEDIA SCREENS PENTRU BORDER-UL POZEI MELE */
+@media only screen and (max-width: 1199px){
+
+    .despre .poza:before{
+        right: 50px;
+        top: 25px;
+        border: 5px solid #777;
+        width: 90%;
+        height: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 991px){
+
+    .despre .poza:before{
+        right: 110px;
+        top: 65px;
+        border: 5px solid #777;
+        width: 55%;
+        height: 90%;
+    }
+}
+
+@media only screen and (max-width: 767px){
+
+    .despre .poza:before{
+        right: 90px;
+        top: 65px;
+        border: 5px solid #777;
+        width: 80%;
+        height: 90%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+
+    .despre .poza:before{
+        right: 90px;
+        top: 65px;
+        border: 5px solid #777;
+        width: 80%;
+        height: 90%;
+    }
+}
+
+@media only screen and (max-width: 500px){
+
+    .despre .poza:before{
+        right: 85px;
+        top: 60px;
+        border: 5px solid #777;
+        width: 80%;
+        height: 90%;
+    }
+}
+
+@media only screen and (max-width: 450px){
+
+    .despre .poza:before{
+        right: 150px;
+        top: 75px;
+        border: 5px solid #777;
+        width: 50%;
+        height: 77%;
+    }
+}
+
+@media only screen and (max-width: 430px){
+
+    .despre .poza:before{
+        right: 110px;
+        width: 60%;
+        height: 80%;
+    }
+}
+
+@media only screen and (max-width: 370px){
+
+    .despre .poza:before{
+        right: 100px;
+        width: 65%;
+    }
+}
+
+
+@media only screen and (max-width: 340px){
+
+    .despre .poza:before{
+        right: 80px;
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 300px){
+
+    .despre .poza:before{
+        right: 80px;
+        width: 70%;
+        height: 75%;
+    }
+}
+
+
+
+
+
+
+/* DE CE NOI ---------------------------------------------------------------------------*/
+.curved{
+    margin:0px;
+    padding-top:5px;
+    padding-bottom:50px;
+}
+
+
+.details{
+    text-align:center;
+    color:white;
+    padding-bottom:80px;
+}
+.details .row{
+    margin-right:-50px;
+}
+.details .container {
+    padding:0px;
+}
+.details h1{
+    margin:0px;
+    font-size: 35px;
+    font-family: montserrat;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom:80px;
+    color:rgb(250,219, 94);
+    text-align:center;
+}
+.details h1::after{
+    content:'';
+    background:#fff;
+    display:block;
+    width: 50px;
+    height: 1px;
+    margin:10px auto;
+    opacity:0.5;
+}
+
+.details .nr{
+    color:white;
+    text-align: left;
+    opacity:0.1;
+    font-size:100px;
+    font-family: montserrat-bold;
+}
+
+
+
+.details .interior{
+    text-align: left;
+    margin-bottom:10px;
+    margin-right:10px;
+}
+
+
+.details .number span{
+    color:#777;
+    font-size:35px;
+    font-weight: 700;
+}
+.details .number h2{
+    display: inline-block;
+    font-size:20px;
+    font-family: montserrat;
+    font-weight: bold;
+    margin-left:20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.details p{
+    font-size:17px;
+    font-family: montserrat;
+    margin-top: 5px;
+    margin-left:58px;
+    color: rgb(250,219, 94);
+}
+.details .coloana-scris{
+    padding-top:10px !important;
+    padding-left:30px;
+
+}
+.details .coloana-poza{
+    padding-top:30px;
+}
+
+
+
+
+
+
+/* cunostinte --------------------------------------------------------------------------*/
+
+.cunostinte{
+    padding-bottom:120px;
+}
+
+.cunostinte h1{
+    margin:0px;
+    font-size: 35px;
+    font-family: montserrat;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom:50px;
+    color: rgb(250,219, 94);
+    text-align:center;
+}
+
+.cunostinte h1::after{
+    content:'';
+    background:#fff;
+    display:block;
+    width: 50px;
+    height: 1px;
+    margin:10px auto;
+    opacity:0.5;
+}
+
+.cunostinte .nr{
+    padding-top:30px;
+    text-align: right;
+    opacity:0.1;
+    font-size:100px;
+    margin-right: 50px;
+    font-family: montserrat-bold;
+}
+
+.cunostintele-mele p{
+    padding-bottom: 10px;
+    padding-top:20px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.buton-cunostinte{
+    text-align: center;
+    padding-top: 20px;
+}
+.buton-cunostinte a{
+    border: 1px solid #777;
+    color: white;
+    padding: 10px 20px;
+    margin-left: 5px;;
+    display: inline-block;
+    font-family: montserrat;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 12px;
+    outline: none;
+    text-transform: uppercase;
+}
+
+.buton-cunostinte a:hover{
+    opacity:0.8;
+}
+
+
+
+
+
+.cunostinte .skills .limbaje{
+    margin-bottom: 15px;
+}
+.cunostinte .skills .info{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.cunostinte .skills span{
+    font-weight: 500;
+    font-size: 18px;
+}
+.cunostinte .skills .bara{
+    height: 3px;
+    width: 100%;
+    background: #333;
+    position: relative;
+}
+.cunostinte .skills .bara::before{
+    content: "";
+    background-color: white;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.skills .html::before{
+    width: 90%;
+}
+.skills .css::before{
+    width: 70%;
+}
+.skills .js::before{
+    width: 90%;
+}
+.skills .php::before{
+    width: 65%;
+}
+.skills .mysql::before{
+    width: 50%;
+}
+
+.skills .csharp::before{
+    width: 55%;
+}
+
+
+
+
+/* CONTACT *******************************************************************************/
+
+/* TEXT FORM CONTACT */
+
+.contacteaza-ne{
+    padding:50px 0px 100px 0px;
+}
+
+.contacteaza-ne .nr{
+    text-align: left;
+    opacity:0.1;
+    font-size:100px;
+    margin-left: 50px;
+    font-family: montserrat-bold;
+}
+
+.contacteaza-ne .titlu{
+    padding-bottom:30px;
+    font-family: monstserrat;
+    text-transform:uppercase;
+}
+
+.contacteaza-ne .titlu h2{
+    margin:0px;
+    font-size: 30px;
+    font-family: montserrat;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom:20px;
+    color: rgb(250,219, 94);
+    text-align:center;
+}
+
+.contacteaza-ne .titlu h2::after{
+    content:'';
+    background:#fff;
+    display:block;
+    width: 50px;
+    height: 1px;
+    margin:10px auto;
+    opacity:0.5;
+}
+
+.contacteaza-ne button{
+    margin-top:20px;
+    padding:10px 25px;
+    color:white;
+    text-align: center;
+    border: 1px solid #777;
+    text-decoration: none;
+    font-size: 12px;
+    outline: none;
+    text-transform: uppercase;
+    border-radius:0px;
+}
+
+.contacteaza-ne button:hover{
+    color:white;
+    opacity:0.9;
+}
+
+
+.coloana-stanga{
+    text-align: center;
+    padding-top:15px;
+}
+
+.coloana-stanga .icons{
+    font-size:25px;
+    margin:10px;
+}
+.coloana-stanga .icons i{
+    margin-bottom:30px;
+    color:#777;
+}
+.coloana-stanga .info{
+    margin-left:30px;
+    margin-top:-6px;
+}
+
+.coloana-dreapta{
+    text-align: center;
+}
+.coloana-dreapta .btn{
+    text-transform: uppercase;
+    font-size:12px;
+}
+.mb-2, .my-2 {
+    margin-bottom: .5rem!important;
+    background: #333;
+    border: none;
+}
+
+
+/* FOOTER */
+
+.page-footer{
+    background:#333;
+    padding-bottom:0px;
+    margin:0px;
+}
+.page-footer span{
+    font-size: 15px;
+}
+
+.social-media.col-md-12.text-center {
+    padding: 0px;
+}
+
+.social-media a i:hover{
+    color:#8b852d !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------TELEFON - 991 ------------------------- */
+
+
+
+/* MEDIA */
+@media only screen and (max-width: 991px){
+    
+
+    .banner{
+        background-attachment: scroll;
+    }
+
+    .title .button a{
+        padding: 10px 16px;
+    }
+
+    /* DESPRE NOI */
+
+    .button button{
+        font-size: 12px;
+    }
+    .buton-despre{
+        text-align: center;
+    }
+
+    .despre{
+        padding-top:100px;
+        padding-bottom:30px;
+        text-align: center;
+    }
+
+    .despre .poza img{
+        width: 430px;
+        padding-top:50px;
+        padding-bottom:10px;
+    }
+    .despre p{
+        padding-top:100px;
+        padding-bottom:20px;
+    }
+
+
+    /* DE CE NOI */
+
+    .curved{
+        clip-path:polygon(0 0, 100% 0, 100% 100%, 0 95%);
+        padding-bottom:20px;
+    }
+    
+    .details{
+        padding-top:30px;
+        padding-bottom:40px;
+    }
+
+    .details .number{
+        text-align: center;
+    }
+    .details .number h2{
+        font-size:18px;
+        padding-top:10px;
+        padding-bottom:10px;
+        text-align: center;
+    }
+    .details p{
+        text-align: center;
+        margin:0px;
+    }
+    
+    .nr{
+        display:none;
+    }
+
+}
+
+@media only screen and (max-width: 400px){
+    /* DE CE NOI? */
+    .details .number i{
+        font-size:20px;
+        padding-right:5px;
+    }
+    .details .number h2{
+        font-size:14px;
+        padding-bottom:10px;
+    }
+}
+
+
+/* 700 ------------------------------------------------------------------- */
+
+@media only screen and (max-width: 700px){
+
+    .title{
+        top:45%;
+        left:50%;
+        margin-right: -100px;
+        text-align: center;
+    }
+    .title h1{
+        padding-top:20px;
+        font-size:30px;
+    }
+    .title .button a{
+        font-size: 10px;
+        text-align: center;
+        padding:13px 20px;
+        margin-top:0px;
+        color:#fff;
+    }
+
+}
+
+
+/* 600 ------------------------------------------------------------------- */
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+    
+
+    .banner{
+        background-image: url(../img/pozabackground-telefon.jpg);   
+        height: 100vh;
+    }
+    .title h1{
+        font-size:40px;
+        text-align: center;
+        letter-spacing:2px;
+    }
+
+    .title .button a{
+        text-align: center;
+        padding:13px 20px;
+        margin-top:0px;
+        color:#fff;
+        font-size:13px
+    }
+
+    /* DESPRE NOI*/
+
+    .About-head-section{
+        padding-bottom:30px;
+    }
+    .despre{
+        padding-top:20px;
+    }
+    .About-head-section .despre h1{
+        padding-top: 40px;
+        font-size: 30px;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    
+    .buton-despre{
+        text-align: center;
+        margin-bottom:0px;
+    }
+    
+    .despre .poza img {
+        width: 400px;
+    }
+    .despre p{
+        padding-top:80px;
+    }
+
+    /* DE CE NOI */
+    .curved{
+        margin:0px;
+        padding-top:30px;
+    }
+
+
+    .details{
+        padding-top:20px;
+        padding-bottom:40px;
+    }
+    .details .row {
+        margin-right: -30px;
+        padding-left:20px;
+    }
+    .details  h1{
+        font-size: 30px;
+        padding-bottom: 50px;
+        text-align: center;
+        padding-top:20px;
+    }
+
+
+    .details .interior{
+        margin-bottom:25px;
+        text-align: left;
+        margin-right: 0px;
+    }
+    .details .number{
+        text-align: center;
+    }
+    .details .number i{
+        font-size:30px;
+        padding-right:0px;
+        padding-top:10px;
+        padding-bottom:15px;
+    }
+    .details .number h2{
+        font-size:15px;
+        text-align: center;
+        margin: 0px;
+        padding:0px;
+    }
+    .details p{
+        padding-top:15px;
+        padding-left:0px;
+        margin:0px;
+        font-size:15px;
+        padding-bottom: 15px;
+        text-align: center;
+    }
+
+    .details .coloana-scris {
+        padding-top: 10px !important;
+        padding-left: 10px;
+    }
+
+    /* Skills */
+
+    .cunostinte h1{
+        padding-top:20px;
+        padding-bottom:0px;
+        font-size: 30px;
+    }
+    .buton-cunostinte{
+        padding-top: 20px;
+        padding-bottom: 100px;
+    }
+
+    /* CONTACT */
+
+    .contacteaza-ne{
+        padding-top:70px;
+        padding-bottom:50px;
+    }
+    .contacteaza-ne .titlu h2{
+        font-size: 30px;
+    }
+    .coloana-stanga .icons{
+        font-size:20px;
+        margin:10px;
+    }
+    .coloana-stanga .icons i{
+        padding-left:10px;
+    }
+
+
+
+}
+
+
+/* 500 Poza cu mine------------------------------- */
+
+.despre .poza img {
+    width: 380px;
+}
+
+
+/* 450-----------------------------*/
+
+
+
+
+@media only screen and (max-width: 450px) {
+
+
+
+    .title .button a{
+        text-align: center;
+        border:none;
+        color:#fff;
+        font-size:12px;
+        padding:12px 17px;
+    }
+
+    .banner{
+        background-attachment: scroll;
+    }
+
+    /* DESPRE NOI */
+
+
+    .despre .poza img{
+        width: 220px;
+    }
+
+        /* CONTACT */
+
+    .coloana-stanga .icons{
+        font-size:15px;
+        margin:10px;
+    }
+    .coloana-stanga .info {
+        margin-left: 15px;
+        padding-top:2px;
+    }
+
+}
+
+/* 300-----------------------------*/
+
+
+
+@media only screen and (max-width: 300px) {
+
+    .buton-cunostinte a{
+        margin-top: 20px;
+    }
+    
+    .title h1{
+        font-size:26px;
+    }
+    
+    .title .button a{
+        text-align: center;
+        padding: 10px 13px;
+        margin-top:6px;
+        border:none;
+        color:#fff;
+        text-decoration: none;
+        transition: 0.6s ease;
+        font-size:12px;
+    }
+
+    .despre .poza img {
+        width: 200px;
+    }
+    .About-head-section .despre h1 {
+        font-size: 20px;
+    }
+
+     /* DE CE NOI */
+     .details .row {
+        margin-right: -20px;
+    }
+    .details h1 {
+        font-size: 20px;
+    }
+
+
+    /* Cunostinte */
+
+    .cunostinte h1 {
+        font-size: 25px;
+    }
+
+    /*Contact */
+    .contacteaza-ne .titlu h2 {
+        font-size: 25px;
+    }
+}

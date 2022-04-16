@@ -1,0 +1,243 @@
+﻿<!DOCTYPE HTML>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6e3f870a72.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="shortcut icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/servicii.css">
+    <title>South Clean Services</title>
+</head>
+
+
+<body>
+
+  <!-- LOADER-->
+  
+  <div class ="preload">
+    <div class="loader"></div>
+  </div>
+
+
+
+    <section class="banner">
+      <div class="navigatie">
+              <nav>
+            
+                        <input type="checkbox" id="nav" class="hidden">
+                        <label for="nav" class="nav-btn">
+                              <i></i>
+                              <i></i>
+                              <i></i>
+                        </label>
+                        <div class="logo">
+                          <a class="navbar-brand" href="../index.php"><img src="../img/logoinainte.png" alt="Logo"></a>
+                        </div>
+                        <div class="nav-wrapper">
+                              <ul>
+                                    <li><a href="../index.php">Acasă</a></li>
+                                    <li><a href="../pages/despre.php">Despre</a></li>
+                                    <li><a href="servicii.php">Servicii</a></li>
+                                    <li><a href="../pages/tarife.php">Tarife</a></li>
+                                    <li><a href="../pages/contact.php">Contact</a></li>
+                              </ul>
+                        </div>
+                  
+              </nav>
+      </div>
+
+
+        <div class="container">
+            <div class="title">
+              <h1>Servicii</h1>
+            </div>
+            <div class="button-suna">
+              <a href="tel:0746268751">Sună acum</a>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+<div class="titlu-principal">
+  <h1>Cu ce ne ocupam</h1>
+</div>
+
+
+    <!-- SERVICII -->
+<div class="servicii">
+    <div class="container">
+        <div class="row" data-aos="fade-up">
+                      <!--Generala-->
+                      <div class="coloana col-md-4 text-center">
+                          <div class="interior">
+                            <div class="poza" style="background-image: linear-gradient(to left,#31313149,#31313149), url(../img/servicii-poze/curatenie-generala.jpg);">
+                            </div>
+                            <h4>Curățenie generală</h4>
+                            <h5>De la 250 de lei</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                              Ipsum omnis cumque nulla
+                            </p>
+                            <div class="buton-servicii">
+                              <a href="../pages/curatenie-generala.php">Detalii</a>
+                            </div>
+                          </div>
+                      </div>
+                      <!--dupa constructor-->
+                      <div class="coloana col-md-4 text-center">
+                        <div class="interior">
+                            <div class="poza" style="background-image: linear-gradient(to left,#31313149,#31313149), url(../img/servicii-poze/curatenie-dupa-constructor.jpg);">
+                            </div>
+                            <h4>Curățenie după constructor / evenimente</h4>
+                            <h5>De la 8 lei / mp</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                              Ipsum omnis cumque nulla
+                            </p>
+                            <div class="buton-servicii">
+                              <a href="../pages/curatenie-constructor-evenimente.php">Detalii</a>
+                            </div>
+                        </div>
+                      </div>
+
+                      <!--de intretinere-->
+                      <div class="coloana col-md-4 text-center">
+                        <div class="interior">
+                            <div class="poza" style="background-image: linear-gradient(to left,#31313149,#31313149), url(../img/servicii-poze/curatenie-de-intretinere.jpg);">
+                            </div>
+                            <h4>Curățenie de întreținere</h4>
+                            <h5>De la 150 de lei</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                              Ipsum omnis cumque nulla
+                            </p>
+                            <div class="buton-servicii">
+                              <a href="../pages/curatenie-intretinere.php">Detalii</a>
+                            </div>
+                        </div>
+                      </div>
+
+                        <!--Curatenie birouri si spatii comerciale-->
+                        <div class="coloana col-md-4 text-center">
+                          <div class="interior">
+                            <div class="poza" style="background-image: linear-gradient(to left,#31313149,#31313149), url(../img/servicii-poze/curatenie-spatii.jpg);">
+                            </div>
+                            <h4>Birouri și spații comerciale</h4>
+                            <h5>De la 4 lei / mp</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                              Ipsum omnis cumque nulla
+                            </p>
+                            <div class="buton-servicii">
+                              <a href="../pages/curatenie-birouri-spatii.php">Detalii</a>
+                            </div>
+                          </div>
+                        </div>
+
+
+                      <!--Canapele si tapiterii-->
+                            <div class="coloana col-md-4 text-center">
+                                  <div class="interior">
+                                    <div class="poza" style="background-image: linear-gradient(to left,#31313149,#31313149), url(../img/servicii-poze/curatenie-canapele.jpg);">
+                                    </div>
+                                    <h4>Canapele și tapițerii</h4>
+                                    <h5>De la 100 de lei</h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                      Ipsum omnis cumque nulla
+                                    </p>
+                                    <div class="buton-servicii">
+                                      <a href="../pages/curatenie-canapele-tapiterii.php">Detalii</a>
+                                    </div>
+                                  </div>
+                            </div>
+  
+                          <!--Mochete si covoare-->
+                          <div class="coloana col-md-4 text-center">
+                              <div class="interior">
+                                  <div class="poza" style="background-image: linear-gradient(to left,#31313149,#31313149), url(../img/servicii-poze/curatenie-covoare.jpg);">
+                                  </div>
+                                  <h4>Mochete și covoare</h4>
+                                  <h5>De la 4 lei / mp</h5>
+                                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Ipsum omnis cumque nulla
+                                  </p>
+                                  <div class="buton-servicii">
+                                    <a href="../pages/curatenie-mochete-covoare.php">Detalii</a>
+                                  </div>
+                              </div>
+                          </div>
+          </div>
+      </div>
+    </div>
+
+
+
+    <!--PROMOTII-->
+  
+    <div class="promotii">
+            <div class="promotii-title">
+              <h1>Abonamente</h1>
+            </div>
+      <div class="container">
+        <div class="col-md-12 col-lg-12">
+                      <div class="row">
+                                <div class="coloana col-md-12 col-lg-6 text-center">
+                                    <div class="promotii-interior">
+                                      <i class="fas fa-tags"></i>
+                                    <p><b>Abonament de 1 luna</b> - La 3 interventii a 4-a este gratuita</p>
+                                    </div>
+                                </div>
+                                <div class="coloana col-md-12 col-lg-6 text-center">
+                                    <div class="promotii-interior">
+                                      <i class="fas fa-tags"></i>
+                                    <p><b>La a 2-a interventie </b> se aplica o reducere de 20%</p>
+                                    </div>
+                                </div>
+                      </div>
+        </div>
+        <div class="buton-tarife">
+          <a href="../pages/tarife.php">Tarifele noastre</a>
+        </div>
+      </div>
+    </div>
+  
+
+
+<?php 
+ include '../includes/info.php';
+?>
+
+
+
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset:50,
+      duration:1300
+    });
+  </script>
+
+  <script src="../js/custom.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./main.css" />
+  <title>Florin Stere</title>
+
+  <script defer src="./main.js"></script>
+  <script type="text/javascript" src="answers.json"></script>
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="welcoming">Hello everyone!</h1>
+  </header>
+
+  <p> You will be asked one question, if your answer is correct then you will be a winner! <br> Please enter your name
+    and the answer.<br><br>
+    <span class="span1">The question is: <br></span>
+    <span class="span2"><b>Ce este tare atunci cand este in mana, dar moale cand este in gura?</b></span>
+  </p>
+
+  <form class="form1">
+    <li>
+      <label for="fname">Name: </label>
+      <input type="text" id="fname" name="fname" maxlength="20"><br><br>
+
+      <label for="fname2">Answer: </label>
+      <input type="text" id="fname2" name="fname2" maxlength="10"><br><br>
+
+      <button type="button" onclick="functiaMea()" class="btnAnswer">
+        SUBMIT
+      </button>
+    </li>
+  </form>
+
+  <img id="thinking" src="./imgs/think.png">
+
+  <div id="new">
+    <button type="button" onclick="functieClose()" class="btnClose">
+      X
+    </button>
+  </div>
+
+
+
+</body>
+
+</html>

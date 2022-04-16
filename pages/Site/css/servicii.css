@@ -1,0 +1,702 @@
+@font-face{
+    font-family: 'montserrat';
+    src: url(../fonts/Montserrat-Light.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face{
+    font-family: 'poppins';
+    src: url(../fonts/Poppins-Medium.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: montserrat;
+}
+body{
+    background-color: white;
+}
+
+
+/* LOADER */ 
+
+.preload{
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+    z-index:9999;
+}
+
+
+
+    .loader {
+    border: 5px solid #ffffff;
+    border-top: 5px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.preload-finish{
+    opacity:0;
+    pointer-events: none;
+}
+
+
+
+/* Banner */
+.banner{
+    position:relative;
+    padding:160px 0px;
+    width: 100%;
+    height: 70vh;
+    background-size:cover;
+    background-image: linear-gradient(to left, rgba(0,0,0,0.9),rgba(0, 0, 0, 0.6)), url(../img/background-image-servicii.jpg);
+    background-position: center;
+    box-shadow:1px 2px 4px 0px #00000075 !important;
+    background-attachment: fixed;
+}
+
+.navigatie{
+    background-color:transparent;
+    width:100%;
+    position:fixed;
+    z-index: 99;
+    margin:0px;
+    padding:0px;
+    margin-top: -160px;
+}
+
+
+.logo {
+    float: left;
+    padding: 8px;
+    margin-left: 40px;
+    margin-top: 8px;
+}
+
+.navbar-brand{
+    color:white !important;
+}
+.navbar-brand img{
+    width: auto;
+    height: 100px;
+    margin:-32px 0px -25px 0px;
+}
+
+nav ul {
+    float: right;
+    list-style-type: none;
+    padding-top:5px;
+    margin-right:20px;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li:not(:first-child) {
+    margin-left: 48px;
+}
+
+nav ul li:last-child {
+    margin-right: 24px;
+}
+
+nav ul li a {
+    display: inline-block;
+    outline: none;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1.1px;
+    font-weight: 600;
+}
+
+nav ul li a:hover{
+    color:#fff;
+    text-decoration: underline;
+}
+
+
+/* FUNDAL JS */
+
+
+.fundal{
+    background:#104f47 !important;
+    box-shadow:1px 2px 4px 0px #00000075 !important;
+}
+
+.fundal .nav-btn {
+    background-color:#104f47;
+    border-radius: 50%;
+    box-shadow:1px 2px 4px 0px #00000075;
+}
+
+.fundal .nav-btn i{
+    background: #fff;
+    border-radius: 2px;
+}
+
+
+
+
+#nav:checked + .nav-btn {
+    transform: rotate(45deg);
+    background-color: #104f47;
+}
+
+#nav:checked + .nav-btn i {
+    background: #fff;
+    transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-btn i:nth-child(1) {
+    transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked + .nav-btn i:nth-child(2) {
+    opacity: 0;
+}
+
+#nav:checked + .nav-btn i:nth-child(3) {
+    transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked ~ .nav-wrapper {
+    z-index: 9990;
+    display:block
+}
+
+#nav:checked ~ .nav-wrapper ul li a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+/* MEDIA SCREEN NAVBAR PTR TLF */
+
+@media only screen and (max-width: 991px){
+
+    .navigatie{
+        background-color:transparent;
+        width:100%;
+        position: absolute;;
+        z-index: 99;
+        margin:0px;
+        padding:0px;
+        margin-top: -160px;
+    }
+        
+
+
+    .navbar-brand img{
+        height:100px;
+        margin:-20px 0px 0px 0px;
+    }
+
+    .nav-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: #fff;
+        display:none;
+        transition: all 0.2s ease;
+    }
+
+    .nav-wrapper ul {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+    }
+
+    .nav-wrapper ul li {
+          display: block;
+          float: none;
+          width: 100%;
+          text-align: center;
+          padding-top:10px;
+          margin-bottom: 10px;
+    }
+
+    .nav-wrapper ul li:not(:first-child) {
+          margin-left: 0;
+    }
+
+    .nav-wrapper ul li a {
+          padding: 10px 24px;
+          opacity: 0;
+          color: #000;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 1.2px;
+          transform: translateX(-20px);
+          transition: all 0.2s ease;
+    }
+
+    .nav-btn {
+          position: fixed;
+          right: 30px;
+          top: 28px;
+          display: block;
+          width: 47px;
+          height: 46px;
+          cursor: pointer;
+          z-index: 9999;
+          border-radius: 50%;
+    }
+
+    .nav-btn i {
+          display: block;
+          width: 20px;
+          height: 2px;
+          background: #fff;
+          border-radius: 2px;
+          margin-left: 14px;
+    }
+
+    .nav-btn i:nth-child(1) {
+          margin-top: 16px;
+    }
+
+    .nav-btn i:nth-child(2) {
+          margin-top: 4px;
+          opacity: 1;
+    }
+
+    .nav-btn i:nth-child(3) {
+          margin-top: 4px;
+    }
+}
+
+
+.title{
+    position: absolute;
+    top:55%;
+    left:50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+
+.title h1{
+    color:#fff;
+    font-family: montserrat;
+    font-size:50px;
+    text-transform: uppercase;
+    font-style: oblique;
+    font-weight: 700;
+}
+
+.button-suna{
+    position: absolute;
+    top:100%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.button-suna a{
+    text-align: center;
+    padding: 14px 20px;
+    border:none;
+    color:#fff;
+    font-family: montserrat;
+    font-size:12px;
+    text-decoration: none;
+    transition: 0.6s ease;
+    background-color:#104f47;
+    box-shadow:1px 2px 4px 0px #00000075;
+    outline:none;  
+    border-radius:5px;
+    text-transform: uppercase
+
+    
+}
+.button-suna a:hover{
+    background-color:#104f47;
+    color:white;
+}
+
+/* TITLU */
+
+.titlu-principal h1{
+    font-family: montserrat;
+    padding-top:80px;
+    text-align: left;
+    margin-left:100px;
+    font-size:30px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.titlu-principal h1::after{
+    content:'';
+    background:#148071;
+    display:block;
+    width: 300px;
+    height: 3px;
+    margin:10px auto;
+    margin-left:-100px;
+}
+
+
+
+
+/* SERVICII */
+
+
+.servicii{
+    text-align:center;
+    color:rgb(24, 24, 24);
+    padding-top:30px; /* DE SCHIMBAT DACA PUI TITLU */
+}
+
+
+
+.servicii h4{
+    letter-spacing: 1px;
+    text-align: center;
+    color:black;
+    font-size: 15px;
+    font-family: poppins;
+    text-transform: uppercase;
+    padding:30px 30px 0 30px
+}
+.servicii p{
+    text-align: center;
+    letter-spacing: 1px;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-size:17px;
+    font-family: montserrat;
+    margin:20px;
+}
+.servicii h5{
+    letter-spacing: 1px;
+    text-align: center;
+    font-size: 15px;
+    font-family: montserrat;
+    font-weight: bold;
+    padding:0px 30px 0 30px;
+    color:#148071;
+}
+.servicii .coloana{
+    padding-bottom:20px;
+}
+
+.servicii .interior{
+    background-color: rgba(153, 153, 153, 0.11);
+    margin:10px 5px 10px 5px;
+    padding-bottom:20px;
+    box-shadow: 0px 0px 4px 0.5px #bbbbbb;
+}
+
+.servicii .row{
+    padding-bottom:30px;
+}
+
+.poza{ 
+    width: 100%;
+    height: 200px;
+    opacity:0.9;
+}
+
+
+.buton-f{
+    text-align: center;
+    padding-top:20px;
+    padding-bottom:25px;
+}
+.buton-servicii a{
+    background-color:#104f47;
+    color: white;
+    border: none;
+    padding:10px 25px;
+    display: inline-block;
+    font-size:15px;
+    outline:none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.buton-servicii a:hover{
+    background-color:#104f47;
+}
+
+
+
+/* PROMOTII */
+
+
+.promotii{
+    padding-bottom:20px;
+    background:#b1b1b12c;
+}
+.promotii-title h1{
+    padding-top:50px;
+    padding-bottom:35px;
+    text-align: center;
+    font-family: montserrat;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size:30px;
+}
+
+.promotii-title h1::after{
+    content:'';
+    background:#148071;
+    display:block;
+    width: 400px;
+    height: 3px;
+    margin:10px auto;
+}
+
+.promotii .container{
+    margin:0 auto;
+}
+
+.promotii .promotii-interior{
+    padding: 30px 15px 30px 15px;
+    background-color: white;
+    margin-top: 20px;
+    color: #104f47;
+    border-radius: 20px;
+}
+
+
+.promotii .promotii-interior p{
+    margin:0;
+    padding:0;
+    transition:0.5s;
+    font-family: montserrat;
+    font-size:16px;
+    padding-top:10px;
+}
+
+
+.promotii .coloana i{
+    background-color:#104f47;
+    color:white;
+    padding:15px 13px 15px 13px;
+    border-radius: 50%;
+    font-size:25px;
+    transition:0.5s;
+    position: absolute;
+    top: 13%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 0px 3px 1px #fff;
+}
+
+.buton-tarife{
+    padding-top:60px;
+    padding-bottom:50px;
+    text-align: center;
+}
+.buton-tarife a{
+    background-color: transparent;
+    border:1px solid #777;
+    color: #333;
+    padding:13px 25px;
+    display: inline-block;
+    font-family: montserrat;
+    font-weight: bold;
+    text-decoration: none;
+    font-size:12px;
+    outline:none;
+    text-transform: uppercase;
+}
+
+.buton-tarife a:hover{
+    background-color: rgba(216, 216, 216, 0.377);
+    color:black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 991 _---------------------------------------------------------- */
+
+
+@media only screen and (max-width: 991px){
+
+    .banner{
+        background-attachment: scroll;
+    }
+
+
+    /* ABONAMENTE */
+    .promotii-title h1{
+        padding-top:30px;
+        padding-bottom:35px;
+        text-align: center;
+        font-size:30px;
+    }
+    
+    .promotii-title h1::after{
+        content:'';
+        background:#148071;
+        display:block;
+        width: 200px;
+        height: 3px;
+        margin:10px auto;
+    }
+    .promotii .coloana{
+        margin-bottom: 30px;
+    }
+
+    .promotii .promotii-interior p{
+        font-size:17px;
+        padding:0px;
+    }
+
+    .buton-tarife{
+        padding-top:20px;
+        padding-bottom:50px;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .navbar-brand img{
+        height:100px;
+        margin:-20px 0px 0px -20px;
+    }
+
+    /*BANNER */
+
+    .banner{
+        background-image: linear-gradient(to left, rgba(0,0,0,0.9),rgba(0, 0, 0, 0.6)), url(../img/background-image-servicii-mobile.jpg);
+        background-attachment: scroll;
+    }
+    .title{
+        position: absolute;
+        top:50%;
+        left:50%;
+        text-align: center;
+        transform: translate(-50%,-50%);
+    }
+    .title h1{
+        font-size:35px;
+    }
+
+        /* DESPRE NOI TITLU */
+        .titlu-principal h1{
+            text-align: left;
+            margin-left:50px;
+            font-size:20px;
+            text-transform: uppercase;
+        }
+
+    /*SERVICII */
+    .program .titlu{
+        font-size:25px;
+        padding-bottom:10px;
+    }
+    .servicii .titlu h3{
+        padding-top: 100px;
+        padding-bottom:50px;
+        font-family: poppins;
+        font-size: 25px;
+    }
+    .program .row{
+        margin:30px 10px 0px 10px;
+    }
+    .program img{
+        width: 230px;
+        height: 140px;
+
+    }
+    .program .text h2{
+        padding-top:0px;
+    }
+    .servicii .interior{
+        background-color: rgba(153, 153, 153, 0.185);
+        margin:10px 10px 10px 10px;       
+    }
+    
+
+        /* ABONAMENTE */
+        .promotii-title h1{
+            padding-top:30px;
+            padding-bottom:35px;
+            text-align: center;
+            font-size:20px;
+        }
+
+}
+
+
+
+@media only screen and (max-width: 450px) {
+
+
+    .banner{
+    background-attachment: scroll;
+    }
+
+
+}
+
+
+
+@media only screen and (max-width: 300px) {
+
+
+    .navbar-brand img{
+        height:100px;
+        margin:-20px 0px 0px -20px;
+    }
+
+    .banner{    
+        background-attachment: scroll;
+    }
+    .program img{
+        width: 150px;
+        height: 100px;
+    }
+}

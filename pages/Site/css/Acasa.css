@@ -1,0 +1,1304 @@
+@font-face{
+    font-family: 'montserrat';
+    src: url(../fonts/Montserrat-Light.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face{
+    font-family: 'playfair';
+    src: url(../fonts/PlayfairDisplay-Medium.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+html{
+    scroll-behavior: smooth;
+    text-decoration-skip-ink: none;
+}
+
+
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: montserrat;
+}
+body{
+    background-color: white;
+}
+
+
+/* LOADER */ 
+
+.preload{
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+    z-index:9999;
+}
+
+
+
+  .loader {
+    border: 5px solid #ffffff;
+    border-top: 5px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.preload-finish{
+    opacity:0;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+/* BANNER & NAV */
+
+.banner{
+    margin:0px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size:cover;
+    background-image: linear-gradient(to left, rgba(0,0,0,0.9),rgba(0, 0, 0, 0.6)), url(../img/pozabackground-home2.jpg);    
+    background-position: center;
+    box-shadow:1px 2px 4px 0px #00000075 !important;
+    background-attachment: fixed;
+}
+
+
+
+.navigatie{
+    background-color:transparent;
+    width:100%;
+    position:fixed;
+    z-index: 99;
+    margin:0px;
+    padding:0px;
+}
+
+
+.logo {
+    float: left;
+    padding: 8px;
+    margin-left: 40px;
+    margin-top: 8px;
+}
+
+.navbar-brand{
+    color:white !important;
+}
+.navbar-brand img{
+    width: auto;
+    height: 130px;
+    margin: -45px 0px -45px 0px;
+}
+
+nav ul {
+    float: right;
+    list-style-type: none;
+    padding-top:5px;
+    margin-right:20px;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li:not(:first-child) {
+    margin-left: 48px;
+}
+
+nav ul li:last-child {
+    margin-right: 24px;
+}
+
+nav ul li a {
+    display: inline-block;
+    outline: none;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1.1px;
+    font-weight: 600;
+}
+
+nav ul li a:hover{
+    color:#fff;
+    text-decoration: underline;
+}
+
+
+/* FUNDAL JS */
+
+
+.fundal{
+    background:#104f47 !important;
+    box-shadow:1px 2px 4px 0px #00000075 !important;
+}
+
+.fundal .nav-btn {
+    background-color:#104f47;
+    border-radius: 50%;
+    box-shadow:1px 2px 4px 0px #00000075;
+}
+
+.fundal .nav-btn i{
+    background: #fff;
+    border-radius: 2px;
+}
+
+
+
+
+#nav:checked + .nav-btn {
+    transform: rotate(45deg);
+    background-color: #104f47;
+}
+
+#nav:checked + .nav-btn i {
+    background: #fff;
+    transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-btn i:nth-child(1) {
+    transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked + .nav-btn i:nth-child(2) {
+    opacity: 0;
+}
+
+#nav:checked + .nav-btn i:nth-child(3) {
+    transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked ~ .nav-wrapper {
+    z-index: 9990;
+    display:block
+}
+
+#nav:checked ~ .nav-wrapper ul li a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+/* MEDIA SCREEN NAVBAR PTR TLF */
+
+@media only screen and (max-width: 991px){
+
+    .navigatie{
+        background-color:transparent;
+        width:100%;
+        position: absolute;;
+        z-index: 99;
+        margin:0px;
+        padding:0px;
+    }
+        
+
+
+    .navbar-brand img{
+        height:100px;
+        margin:-20px 0px 0px 0px;
+    }
+
+    .nav-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: #fff;
+        display:none;
+        transition: all 0.2s ease;
+    }
+
+    .nav-wrapper ul {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+    }
+
+    .nav-wrapper ul li {
+          display: block;
+          float: none;
+          width: 100%;
+          text-align: center;
+          padding-top:10px;
+          margin-bottom: 10px;
+    }
+
+
+
+    .nav-wrapper ul li:not(:first-child) {
+          margin-left: 0;
+    }
+
+    .nav-wrapper ul li a {
+          padding: 10px 24px;
+          opacity: 0;
+          color: #000;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 1.2px;
+          transform: translateX(-20px);
+          transition: all 0.2s ease;
+    }
+
+    .nav-btn {
+          position: fixed;
+          right: 30px;
+          top: 28px;
+          display: block;
+          width: 47px;
+          height: 46px;
+          cursor: pointer;
+          z-index: 9999;
+          border-radius: 50%;
+    }
+
+    .nav-btn i {
+          display: block;
+          width: 20px;
+          height: 2px;
+          background: #fff;
+          border-radius: 2px;
+          margin-left: 14px;
+    }
+
+    .nav-btn i:nth-child(1) {
+          margin-top: 16px;
+    }
+
+    .nav-btn i:nth-child(2) {
+          margin-top: 4px;
+          opacity: 1;
+    }
+
+    .nav-btn i:nth-child(3) {
+          margin-top: 4px;
+    }
+}
+
+
+/* SCRIS DE LA BANNER */
+
+.title{
+    position: absolute;
+    top:47%;
+    left:35%;
+    text-align: left;
+    transform: translate(-50%,-50%);
+}
+
+.title h1{
+    color:#fff;
+    font-family: playfair;
+    font-size:50px;
+    color:#f5f6f8;
+    padding-bottom: 20px;
+    letter-spacing:3px;
+}
+
+
+
+.title .button a{
+    display: inline-block;
+    font-size:12px;
+    text-transform: uppercase;
+    text-align: center;
+    padding:13px 20px;
+    border:none;
+    color:white;
+    font-family: montserrat;
+    text-decoration: none;
+    transition: 0.6s ease;
+    background-color:#104f47;
+    box-shadow:1px 2px 4px 0px #00000075;
+    outline:none;
+    border-radius: 5px;
+    
+}
+.title .button a:hover{
+    background-color:#104f47;
+    color:white;
+}
+
+
+
+/* DESPRE NOI */
+
+.About-head-section{
+    padding-top:0px;
+    padding-bottom:50px;
+}
+
+.servicii{
+    padding-top:130px;
+    padding-bottom:30px;
+    text-align: center;
+}
+
+.About-head-section .servicii h1{
+    margin-top: -45px;
+    padding-bottom: 15px;
+    font-size: 30px;
+    font-family: montserrat;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color:#072523;
+}
+
+
+.About-head-section .servicii h1::after{
+    content:'';
+    background:#148071;
+    display:block;
+    width: 320px;
+    height: 3px;
+    margin:10px auto;
+    margin-left:-50px;
+}
+.servicii p{
+    text-align: left;
+    padding-bottom:20px;
+}
+.buton-despre{
+    text-align: center;
+}
+.buton-despre a{
+    background-color: white;
+    border: 1px solid rgb(87, 87, 87);
+    color: rgb(24, 24, 24);
+    padding:10px 25px;
+    display: inline-block;
+    font-family: montserrat;
+    font-weight: normal;
+    text-decoration: none;
+    font-size:12px;
+    outline:none;
+    text-transform: uppercase;
+}
+
+.buton-despre a:hover{
+    background-color:rgba(241, 241, 241, 0.678);
+}
+.servicii img{
+    margin-top:20px;
+    width: 420px;
+}
+
+
+
+
+
+/* DE CE NOI */
+.curved{
+    margin:0px;
+    padding-top:5px;
+    padding-bottom:50px;
+    clip-path:polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    background:#b1b1b12c;
+}
+
+
+.details{
+    text-align:center;
+    color:rgb(24, 24, 24);
+    padding-top:50px;
+    padding-bottom:110px;
+}
+.details .row{
+    margin-right:-50px;
+}
+.details .container {
+    padding:0px;
+}
+.details h1{
+    margin:0px;
+    font-size: 30px;
+    font-family: montserrat;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom:30px;
+    color:#072523;
+}
+
+.details h1::after{
+    content:'';
+    background:#148071;
+    display:block;
+    width: 875px;
+    height: 3px;
+    margin:10px auto;
+    margin-left:-50px;
+}
+
+
+.details .interior{
+    text-align: left;
+    padding-top:10px;
+    margin-bottom:10px;
+    margin-right:10px;
+}
+
+
+.details .number span{
+    color:#072523;
+    font-size:35px;
+    font-weight: 700;
+}
+.details .number h2{
+    display: inline-block;
+    font-size:18px;
+    font-family: montserrat;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:#072523;
+}
+.details p{
+    font-size:15px;
+    font-family: montserrat;
+}
+.details .coloana-scris{
+    padding-top:10px !important;
+    padding-left:30px;
+
+}
+.details .coloana-poza{
+    padding-top:30px;
+}
+.details .coloana-poza img{  
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 5px 1px #bbbbbb;
+}
+
+
+
+
+
+
+/* SERVICII */
+
+/* SERVICII */
+
+/* features design */
+/* boxes */
+.explore-section{
+    margin:0;
+    padding:10px 10px 80px 10px;
+    padding-bottom:30px;
+
+}
+.explore-section .container{
+    /* flexbox style */
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow:wrap;
+    width: 100%;
+    
+}
+.explore-section .container .box{
+    box-sizing: border-box;
+    margin:20px;
+    width: 320px;
+    box-shadow: 0px 0px 4px 1px #bbbbbb;
+}
+
+
+.explore-section .titlu h1{
+    padding-top:50px;
+    font-size: 30px;
+    font-family: montserrat;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom:60px;
+    text-align: center;
+    color:#072523;
+}
+.explore-section .titlu h1:after{
+    content:'';
+    background:#148071;
+    display:block;
+    width: 720px;
+    height: 3px;
+    margin:10px auto;
+}
+
+.explore-section .container .box .scris{
+    padding:20px 20px 20px 10px;
+}
+.poza-servicii{ 
+    width: 100%;
+}
+.poza-servicii:hover{
+    opacity:0.8;
+}
+
+.poza-servicii h2{
+    padding-top:30px;
+    padding-bottom:20px;
+    letter-spacing: 1px;
+    font-family: montserrat;
+    text-transform: uppercase;
+    text-align: center;
+    color:white;
+    font-weight: 500;
+    font-size: 20px;
+    margin:10px;
+}
+.poza-servicii a{
+    text-decoration: none;
+}
+
+.buton-servicii{
+    text-align: center;
+    padding-top:0px;
+    padding-bottom:0px;
+}
+.buton-servicii a{
+    background-color: #104f47;
+    color: white;
+    border: none;
+    padding:10px 20px;
+    display: inline-block;
+    font-size:12px;
+    outline:none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.buton-servicii::before{
+    content:'';
+    background:#104f47;
+    display:block;
+    width: 30px;
+    height: 3px;
+    margin:30px auto;
+}
+
+.buton-servicii a:hover{
+    background-color: #148071;
+}
+
+@media screen and (max-width:1200px){
+    .box{
+        width:20%;
+    }
+    @media screen and (max-width:600px){
+        .box{
+            width:65%;
+        }
+}
+}
+
+
+
+/* TESTIMONIALS */
+.testimonials{
+    background:#b1b1b12c;
+    padding-bottom:110px;
+    clip-path:polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+}
+.testimonials-title h1{
+    padding-top:130px;
+    text-align: center;
+    font-size: 30px;
+    font-family: montserrat;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom:30px;
+    color:#072523;
+}
+.testimonials .container{
+    margin:0 auto;
+}
+
+.testimonials .interior{
+    box-shadow: 0px 0px 4px 0.5px #bbbbbb;
+    padding:40px;
+    background:white;
+    margin-top:20px;
+}
+.testimonials .container .interior:hover{
+    background:#104f47;
+
+}
+.testimonials .interior p{
+    margin:0;
+    padding:0;
+    transition:0.5s;
+    font-family: montserrat;
+    padding-bottom: 15px;
+}
+.testimonials .interior h2{
+    margin:20px 0 0;
+    padding:0;
+    transition: 0.5s;
+    font-size:18px;
+    color:#104f47;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.testimonials .container .interior h2 span{
+    font-weight: 600;
+    font-size:14px;
+    color:#afb8b7;
+    transition:0.5s;
+}
+
+.testimonials .container .interior:hover p,
+.testimonials .container .interior:hover h2,
+.testimonials .container .interior:hover h2 span,
+.testimonials .container .interior:hover i{
+    color:#fff;
+}
+
+.testimonials .coloana i{
+    padding-bottom:15px;
+    font-size:40px;
+    transition:0.5s;
+}
+
+
+
+
+
+
+
+
+/* ------------------------------------------TELEFON - 991 ------------------------- */
+
+
+
+/* MEDIA */
+@media only screen and (max-width: 991px){
+    
+
+    .banner{
+        background-image: linear-gradient(to left, rgba(0,0,0,0.9),rgba(0, 0, 0, 0.6)), url(../img/pozabackground-home2-991px.jpg);
+        background-attachment: scroll;
+    }
+
+    .title .button a{
+        padding: 10px 16px;
+    }
+
+
+
+    /* DESPRE NOI */
+
+    .button button{
+        font-size: 12px;
+    }
+    .buton-despre{
+        text-align: center;
+    }
+
+    .servicii{
+        padding-top:100px;
+        padding-bottom:30px;
+        text-align: center;
+    }
+
+    .servicii .poza img{
+        width: 430px;
+        padding-top:50px;
+        padding-bottom:10px;
+    }
+    .servicii p{
+        padding-bottom:20px;
+    }
+
+    /* DE CE NOI */
+
+    .curved{
+        clip-path:polygon(0 0, 100% 0, 100% 100%, 0 95%);
+        padding-bottom:20px;
+    }
+    
+    .details{
+        padding-top:30px;
+        padding-bottom:40px;
+    }
+
+    .details h1::after{
+        content:'';
+        background:#148071;
+        display:block;
+        width: 500px;
+        height: 3px;
+        margin:10px auto;
+        margin-left:-50px;
+    }
+
+    .details .number h2{
+        font-size:18px;
+        padding-top:10px;
+        padding-bottom:10px;
+        text-align: left;
+        padding-left: 10px;
+        color:#148071;
+    }
+    
+
+
+    .details .coloana-poza{
+        display:none;
+    }
+
+
+
+    /* SERVICII */
+    .explore-section .titlu h1:after{
+        width: 150px;
+        height: 3px;
+        margin:10px auto;
+    }
+    .explore-section{
+    margin:0;
+    padding:10px 10px 80px 10px;
+    padding-bottom:30px;
+
+    }
+    .explore-section .container{
+        /* flexbox style */
+        border-radius: 15px;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-flow:wrap;
+        width: 100%;
+    }
+    .explore-section .container .box{
+        box-sizing: border-box;
+        margin:20px;
+        width: 300px;
+        border-radius:30px;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials{
+        padding-bottom:80px;
+        clip-path:polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+    }
+
+}
+
+
+@media only screen and (max-width: 400px){
+        /* DE CE NOI? */
+        .details .number i{
+            font-size:20px;
+            padding-right:5px;
+        }
+        .details .number h2{
+            font-size:14px;
+            padding-bottom:10px;
+        }
+}
+
+
+
+/* 700 ------------------------------------------------------------------- */
+
+@media only screen and (max-width: 700px){
+
+    .title{
+        top:45%;
+        left:50%;
+        margin-right: -100px;
+        text-align: center;
+    }
+    .title h1{
+        padding-top:50px;
+        font-size:30px;
+    }
+    .title .button a{
+        font-size: 10px;
+        text-align: center;
+        padding:13px 20px;
+        margin-top:0px;
+        color:#fff;
+    }
+
+}
+
+
+
+
+/* 600 ------------------------------------------------------------------- */
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .navbar-brand img{
+        height: 130px;
+        margin: -30px 0px 0px -20px;
+    }
+
+    
+    .banner{
+        background-image: linear-gradient(to left, rgba(0,0,0,0.5),rgba(0, 0, 0, 0.7)), url(../img/pozabackground-home2-mobil.jpg);
+    }
+
+
+    .title h1{
+        font-size:30px;
+        text-align: center;
+        letter-spacing:2px;
+    }
+
+    .title .button a{
+        text-align: center;
+        padding:13px 20px;
+        margin-top:0px;
+        color:#fff;
+        font-size:13px
+    }
+    
+
+    /* DESPRE NOI*/
+
+    .About-head-section{
+        padding-top:20px;
+        padding-bottom:30px;
+    }
+    .servicii{
+        padding-top:20px;
+    }
+    .About-head-section .servicii h1{
+        padding-top: 60px;
+        font-size: 23px;
+        padding-bottom: 20px;
+        text-align: left;
+    }
+    .About-head-section .servicii h1::after{
+        width: 150px;
+        height: 3px;
+        margin:10px auto;
+        margin-left:-50px;
+    }
+    
+    .buton-despre{
+        text-align: center;
+        margin-bottom:0px;
+    }
+    .servicii .poza img{
+        width: 320px;
+        padding-bottom:10px;
+    }
+    
+
+    /* DE CE NOI */
+    .curved{
+        margin:0px;
+        padding-top:30px;
+    }
+
+
+    .details{
+        padding-top:20px;
+        padding-bottom:50px;
+        padding-left:20px;
+    }
+    .details .row {
+        margin-right: -20px;
+    }
+    .details  h1{
+        margin:0px 0px 0px 12px;
+        font-size: 23px;
+        padding-bottom: 5px;
+        text-align: left;
+    }
+    .details h1::after{
+        width: 150px;
+        height: 3px;
+        margin:10px auto;
+        margin-left:-50px;
+    }
+
+
+    .details .interior{
+        margin-bottom:25px;
+        text-align: left;
+        margin-right: 0px;
+    }
+    .details .number i{
+        font-size:30px;
+        padding-right:0px;
+        text-align: left;
+    }
+    .details .number h2{
+        font-size:18px;
+        padding-top:10px;
+        padding-bottom:10px;
+        text-align: left;
+        padding-left: 10px;
+    }
+    .details p{
+        padding-top:0px;
+        padding-left:0px;
+        font-size:15px;
+        padding-bottom:15px;
+    }
+
+    .details .coloana-scris {
+        padding-top: 10px !important;
+        padding-left: 10px;
+    }
+
+
+
+    /* SERVICII */
+
+    .explore-section{
+        padding:0px 15px 50px 15px;
+    }
+    .explore-section .titlu h1{
+        margin-top:0px;
+        font-size:23px;
+        padding-bottom:5px;
+        text-align: left;
+        margin-left: 20px;
+    }
+    .explore-section .titlu h1:after{
+        width: 150px;
+        height: 3px;
+        margin:10px auto;
+        margin-left:-50px;
+    }
+    .explore-section .container .box{
+        border-radius: 15px;
+        box-sizing: border-box;
+        margin:20px 0px 20px 0px;
+        width: 100%;
+    }
+    .poza-servicii h2{
+        padding:10px 5px 0 5px;
+    }
+    
+
+    /* TESTIMONIALS */
+
+    .testimonials h1{
+        padding-top:100px;
+        font-size:23px;
+        text-align: left;
+        margin-left:30px;
+        padding-bottom: 10px;
+    }
+    .testimonials h1::after{
+        content:'';
+        background:#148071;
+        display:block;
+        width: 150px;
+        height: 3px;
+        margin:10px auto;
+        margin-left:-50px;
+    }
+    .testimonials .interior {
+        padding: 20px;
+    }
+
+
+  
+
+}
+
+
+
+
+/* 450-----------------------------*/
+
+
+
+
+@media only screen and (max-width: 450px) {
+
+
+    .title .button a{
+        text-align: center;
+        border:none;
+        color:#fff;
+        font-size:12px;
+        padding:12px 17px;
+    }
+
+    .banner{
+        background-attachment: scroll;
+    }
+
+
+    /* DESPRE NOI */
+
+
+    .servicii .poza img{
+        width: 240px;
+    }
+
+
+}
+
+
+
+
+/* 300-----------------------------*/
+
+
+
+@media only screen and (max-width: 300px) {
+
+
+    .navbar-brand img{
+        height:100px;
+        margin:-20px 0px 0px -20px;
+    }
+    
+    .title h1{
+        font-size:23px;
+    }
+    
+    .title .button a{
+        text-align: center;
+        padding: 10px 13px;
+        margin-top:6px;
+        border:none;
+        color:#fff;
+        text-decoration: none;
+        transition: 0.6s ease;
+        font-size:12px;
+    }
+
+    .interior h2{
+        font-size:13px;
+    }
+
+    .banner{
+        background-attachment: scroll;
+    }
+
+
+    /* DE CE NOI */
+    .details .row {
+        margin-right: -20px;
+    }
+  
+}
+
+
+
+
+
+/* INCLUDE LA FOOTER SI CONTACT */
+
+    /* PARTEA DE CONTACT */
+
+    .background-contact{
+        background-image: linear-gradient(to left, rgba(0,0,0,0.9),rgba(0, 0, 0, 0.6)), url(../img/background-contact-3-fullscreen.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: scroll;
+        padding: 50px 0px 50px 0px;
+    }
+    
+    .mesaj{
+        padding-top:80px;
+        padding-bottom:50px;
+        text-align: center;
+    }
+    
+    .mesaj h1{
+        color:#fff;
+        font-family: montserrat;
+        font-size: 30px;
+        text-transform: uppercase;
+        color:#fff;
+    }
+    
+    
+    .buton-contact{
+        text-align: center;
+        padding-bottom:45px;
+    }
+
+    .buton-contact a{
+        border: none;
+        padding:12px 30px;
+        color:#fff;
+        text-decoration: none;
+        transition: 0.6s ease;
+        background-color:#104f47;
+        box-shadow:1px 2px 4px 0px #00000075;
+        border-radius: 5px;
+    }
+
+    .buton-contact a:hover{
+        background-color:#104f47;
+        color:white;
+        border:none;
+        text-decoration: none;
+    }
+
+    
+    
+    
+    
+    /* FOOTER */
+    
+    .page-footer{
+        background-color: #222 !important;
+        color:white !important;
+        margin-top:-50px !important;
+    }
+
+    .page-footer .social-media{
+        padding-top:20px !important;
+    }
+
+    .page-footer .container{
+        padding-top:50px;
+    }
+
+    .page-footer ul li a{
+        text-decoration: none !important;
+        color:#fff !important;
+        font-size:14px;
+    }
+
+    .page-footer ul li a:hover{
+        text-decoration: none !important;
+        color:#104f47 !important;
+    }
+
+    .social-media a i{
+        padding-top:10px;
+        width: 50px;
+        height: 45px;
+        background-color: #333;
+        border-radius:50%;
+    }
+    
+    .social-media a i:hover{
+        color:#104f47 !important;
+    }
+
+    .social-media{
+        margin-top:-20px;
+        padding-bottom:20px;
+        margin-left: 10px;
+    }
+
+    .footer-copyright{
+        background-color:#333;
+    }
+
+    .footer-copyright p{
+        margin-bottom:-5px;
+        font-size:13px;
+    }
+    
+    .text-contact::after{
+        content:'';
+        background:#148071;
+        display:block;
+        width: 75px; 
+        height: 2px;
+        margin-top:7px;
+    }
+    
+    
+    @media only screen and (max-width: 600px) {
+    
+    
+    /* CONTACT */
+    
+            
+    .mesaj h1{
+        font-family: montserrat;
+        font-size: 23px;
+    }
+    
+    .background-contact{
+        background-image: linear-gradient(to left, rgba(0,0,0,0.9),rgba(0, 0, 0, 0.6)), url(../img/background-contact-3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: scroll;
+        padding: 4px 0px 0px 0px;
+    }
+    
+    .text-contact::after {
+        content: '';
+        background: #148071;
+        display: block;
+        width: 75px;
+        height: 2px;
+        margin: 10px auto;
+    }
+        
+    }
+    
+    @media only screen and (max-width:400){
+    
+        body{
+            font-size:13px;
+        }
+        .banner-contact{
+            background-attachment: scroll;
+        }  
+    
+    }
+    
+    @media only screen and (max-width: 300px) {
+    
+    
+        body{
+            font-size:13px;
+        }
+        .banner-contact{
+            background-attachment: scroll;
+        }
+        
+        .mesaj h1{
+            font-family: montserrat;
+            font-size: 19px;
+        }
+        
+    }
